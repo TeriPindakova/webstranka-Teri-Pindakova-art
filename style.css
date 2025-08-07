@@ -1,0 +1,399 @@
+/*reset*/
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background-color: black;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+
+#H1 {
+  background-color: black;
+  color: rgb(255, 255, 255);
+  text-align: center;
+  font-size: 2vw;
+  font-family: 'Lora', serif;
+  text-shadow: 6px 6px 6px rgb(119, 233, 203), 2px 2px 1px rgb(0, 0, 0);
+  margin: 0;  /*odstraní mezery nahoře/dole */
+  padding: 20px 0 10px 0;
+}
+
+.vlk-header {
+  background-color: black;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+}
+
+#obrazek-vlk {
+  max-width: 100%;
+  height: auto;
+  display: inline-block;
+  
+}
+
+#nav-bar{
+  display: flex;
+  justify-content: center;
+  gap: 50px; /*Automaticky přidá mezery mezi jednotlivými položkami, aniž bys musela řešit margin-right u každého <li>.*/
+  background-color: black;
+  list-style: none;
+  margin: 0;
+  padding: 0 0 10px 0;
+}
+
+.navigace {
+    font-family: 'Roboto', sans-serif;
+    font-size:large;  
+    font-weight: bold;
+    text-transform: uppercase;
+    background-color: black;
+    color: white;
+    text-decoration: none;
+    text-shadow: 6px 6px 6px rgb(119, 233, 203), 2px 2px 1px rgb(0, 0, 0);
+    padding: 0 0 10px 0;
+  }
+
+  .navigace:hover {
+    color: #eff303;       
+  }
+
+#rozcestnik{
+  text-align: center;
+  padding: 10px;
+  background-color: black;
+}  
+
+#H2 {
+  font-size: small; 
+  color:rgb(255, 255, 255);
+  text-shadow: 4px 4px 4px rgb(119, 233, 203), 2px 2px 1px rgb(0, 0, 0);
+}
+
+#footer {
+width: 100%;
+background-color: black;
+padding: 15px 0 0 0;
+font-size: small;
+font-family: 'Roboto', sans-serif;
+color: white;
+}
+
+#footer-sec{
+  display: flex;
+  justify-content: center;
+  gap: 200px;
+  background-color: rgb(38, 40, 41);
+  margin: 0; 
+  padding: 20px;
+  color: white;
+}
+
+#footer-link {
+  text-decoration: none;
+  list-style: none;
+  color: white;
+  padding: 0;
+}
+
+body.dark-page {
+  background-color: rgb(29, 28, 28);
+  color: rgb(239, 250, 249);
+  padding: 20px 40px;
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: justify;
+  min-height: 100vh; 
+  box-shadow: 0 0 20px rgba(0,0,0,1);
+}
+
+body.dark-page a {
+  color: #c1f3d0; 
+}
+
+/* hover ve footeru*/
+.tooltip {
+  position: relative;
+  cursor: pointer;
+  color: #7ee3db; /* třeba modrá */
+}
+
+.tooltip-text {
+  visibility: hidden;
+  opacity: 0;
+  width: 300px;
+  background-color: rgb(38, 40, 41);
+  color: rgb(226, 245, 243);
+  text-align: center;
+  padding: 6px;
+  border-radius: 4px;
+
+  position: absolute;
+  z-index: 1;
+  bottom: 125%; /* nad textem */
+  left: 50%;
+  transform: translateX(-50%);
+  transition: opacity 0.3s;
+}
+
+.tooltip:hover .tooltip-text {
+  visibility: visible;
+  opacity: 1;
+}
+#footer {
+  flex-shrink: 0;
+}
+
+
+/*AKRYL*/
+body.pages {
+  background-color: black;
+  color: rgb(221, 241, 237);
+}
+p.uvod {
+font-family: 'Roboto', sans-serif;
+font-size: 13px;
+font-weight: 400;
+line-height: 1.4;
+text-align: center;
+color: rgb(213, 235, 229);
+letter-spacing: 0.05em;
+text-shadow: 0 0 4px rgba(0,0,0,0.5);
+margin: 10px 0;
+flex: 1;
+}
+
+.akryl-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px 0;
+}
+
+.akryl-section figure {
+  text-align: center;
+  margin: 0;
+  box-sizing: border-box;
+  position: relative;
+  overflow: visible;
+  
+}
+
+.akryl-section.vertikalni figure {
+  flex: 0 1 calc(33.33% - 30px); /* 3 vedle sebe s mezerami */
+  max-width: 400px;
+}
+
+.akryl-section.horizontalni figure {
+  flex: 0 1 calc(33.33% - 30px); /* Stejné zarovnání pro 3 vedle sebe */
+  max-width: 500px;
+}
+
+.akryl-section img {
+  width: 100%;
+  height: auto;
+  display: block;
+  box-shadow: 0 0 10px rgba(155, 154, 154, 0.5);
+  box-shadow: 0.3s ease;
+  margin-bottom: 10px;
+  transition: transform 0.3s ease;
+  position: relative;
+  z-index: 0;
+  
+}
+
+.akryl-section figcaption {
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  color: white;
+  text-align: center;
+}
+.akryl-section img:hover {
+  transform: scale(1.50); /* Zvětšení o x % */
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.6); /* Jemné světlo při hoveru */
+  z-index: 1;
+}
+.hover-info {
+  display: none;
+  position: absolute;
+  background: rgba(0,0,0,0.8);
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 15px;
+  max-width: 300px;
+  z-index: 10;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+.akryl-section figure:hover .hover-info {
+  display: block;
+}
+
+/* VZORY */
+.vzory {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 40px 0;
+  text-align: center;
+  width: 100%;
+  max-width: 1600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.vzory img {
+  width: 100%;
+  max-width: 1600px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+.vzory figcaption {
+  width: 100%;
+  max-width: 1600px;
+  padding: 10px 0;
+  font-size: 16px;
+  line-height: 1.6;
+  color: white;
+  text-align: left; 
+  margin-top: 10px;
+}
+
+/*LaA*/
+.LaA {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 40px;
+  flex-wrap: wrap;
+  padding: 20px;
+}
+
+.LaA figure {
+  max-width: 400px;
+  text-align: center;
+  margin: 0;
+}
+
+.LaA img {
+  width: 100%;
+  height: auto;
+  display: block;
+ 
+  
+  box-shadow: 0 0 10px rgba(155, 154, 154, 0.5);
+  box-shadow: 0.3s ease;
+  margin-bottom: 10px;
+  transition: transform 0.3s ease;
+  position: relative;
+  z-index: 0;
+  
+}
+
+.LaA figcaption {
+  margin-top: 10px;
+  font-size: 16px;
+  text-align: left;
+  line-height: 1.5;
+}
+/*AKVAREL*/
+#nav-bar-akvarel {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  gap: 50px;
+  background-color: black;
+  margin: 40px 0 0 0;
+  padding: 0 0 10px 0;
+  font-family: 'Lora', serif;
+  color: rgb(193, 240, 236);
+  letter-spacing: 2px;
+  text-shadow: 1px 1px 2px rgb(109, 108, 108);
+  padding: 0 0 10px 0;
+}
+
+#akvarel-conent {
+  flex: 1;
+}
+
+#nav-bar-akvarel a {
+  text-decoration: none;
+  color: inherit;
+  padding: 0 0 10px 0; 
+  display: inline-block;
+}
+
+#nav-bar-akvarel a:visited {
+  color: inherit; 
+}
+
+#nav-bar-akvarel a:hover {
+  color: white;
+  text-shadow: 2px 2px 5px rgba(255, 255, 255, 0.5);
+}
+/*Kolekce*/
+.kolekce {
+  flex: 1; /*zatlačí wrapper dolů*/
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  max-width: 100%;
+  margin: 0 auto; /*odstraní vertikální mezery */
+  font-family: 'Lora', serif;
+  color: #2a696b;
+  
+}
+
+.kolekce h2 {
+  text-align: center;
+  font-size: 32px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.galerie-rada {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  max-width: 100%;
+  margin: 0 auto 60px;
+}
+
+figure {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  max-width: 70%;
+  margin: 20px auto;
+  flex: 1 1 300px;
+}
+
+figure img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+  
+}
+
+figure:hover img {
+  transform: scale(1.2); /* Zvětšení obrázku při najetí */
+}
