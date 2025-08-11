@@ -1,9 +1,17 @@
 /*reset*/
 html, body {
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+  overflow-x: hidden;
   margin: 0;
   padding: 0;
-  height: 100%;
   background-color: black;
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
 }
 
 .wrapper {
@@ -91,8 +99,6 @@ box-sizing: border-box;
 text-align: left;
 display: block;
 
-
-
 }
 
 #footer-sec{
@@ -116,8 +122,8 @@ display: block;
 body.dark-page {
   background-color: rgb(29, 28, 28);
   color: rgb(239, 250, 249);
-  padding: 20px 40px;
-  max-width: 900px;
+  padding: 20px 10px;
+  max-width: 100%;
   margin: 0 auto;
   text-align: justify;
   min-height: 100vh; 
@@ -214,7 +220,6 @@ flex: 1;
   height: auto;
   display: block;
   box-shadow: 0 0 10px rgba(155, 154, 154, 0.5);
-  box-shadow: 0.3s ease;
   margin-bottom: 10px;
   transition: transform 0.3s ease;
   position: relative;
@@ -303,10 +308,7 @@ flex: 1;
   width: 100%;
   height: auto;
   display: block;
- 
-  
   box-shadow: 0 0 10px rgba(155, 154, 154, 0.5);
-  box-shadow: 0.3s ease;
   margin-bottom: 10px;
   transition: transform 0.3s ease;
   position: relative;
@@ -391,9 +393,10 @@ figure {
   position: relative;
   overflow: hidden;
   width: 100%;
-max-width: min(70%, 100%);
+  max-width: 100%;
+  min-width: 0;
   margin: 20px auto;
-  flex: 1 1 300px;
+  flex: 1 1 auto;
 }
 
 figure img {
@@ -411,26 +414,75 @@ figure:hover img {
 
 /*pro mobily*/
 @media (max-width: 768px) {
-  /* sem dáš ty úpravy pro mobil */
+
   #nav-bar {
-    gap: clamp(10px, 4vw, 20px);
-  }
-  
- #footer {
-    text-align: left; /* zůstane vlevo */
-    padding: 15px 10px;
-  }
-  #footer-sec {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: clamp(10px, 4vw, 20px);
-    padding: 15px 20px;
-  }
+    gap: clamp(10px, 1vw, 10px);
+    padding: 5px 0;
+    font-size: 0.8rem;
+    gap: 10px;
 
+  }
   .navigace {
-    font-size: clamp(0.8rem, 2vw, 1.1rem);
+    font-size: 0.8rem;
   }
 
+  #footer-sec {
+    display: flex;
+    flex-wrap: nowrap;
+    width: 100%;
+    gap: clamp(30px, 5vw, 60px);
+    padding: 5px 0px;
+    background-color: rgb(38, 40, 41);
+    box-sizing: border-box;
+    
+    
+  }
+
+  #footer-sec > * {
+  flex: 1 1 0;
+    min-width: 0;
+    padding: 2px 1px !important;
+    font-size: 0.8rem;
+    min-width: max-content;
+    margin-left: 5px;
+  }
+
+  #footer {
+    padding: 10px 0 0 0;
+    text-align: left;
+    font-size: 0.5rem;
+    
+  }
+
+  #H2{
+  font-size: 0.5rem;
+  }
+
+  .tooltip{
+  font-size: 0.5rem;
+  }
+
+  #footer-link {
+    font-size: 0.5rem;
+  }
+
+  figure {
+    flex-basis: auto;
+    max-width: 100%;
+  }
+  img, figure {
+    max-width: 100%;
+    height: auto;
+  }
+
+  #obrazek-vlk {
+    max-width: 100%;
+    height: auto;
+    flex-basis: auto;
+  }
+  .vlk-header {
+    flex-wrap: wrap;
+  }
   .akryl-section.vertikalni figure,
   .akryl-section.horizontalni figure {
     max-width: 100%;
@@ -438,7 +490,32 @@ figure:hover img {
   }
 
   .vzory figcaption {
-    text-align: center;
+    text-align: left;
     font-size: clamp(0.8rem, 2vw, 1rem);
+  }
+  body.dark-page {
+    padding: 10px 10px;
+  }
+  
+  img.kontakt{
+  width: 10px;
+}
+
+#nav-bar-akvarel a {
+  gap: clamp(10px, 1vw, 10px);
+  padding: 2px 0;
+  font-size: 0.5rem;
+  gap: 10px;
+}
+
+}
+  @media (min-width: 900px) {
+  body.dark-page {
+    max-width: 900px;
+    padding: 20px 40px;
+  }
+  figure {
+    flex: 1 1 300px;
+    max-width: min(70%, 100%);
   }
 }
