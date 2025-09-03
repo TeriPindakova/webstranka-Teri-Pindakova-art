@@ -29,7 +29,7 @@ html, body {
   font-family: 'Lora', serif;
   text-shadow: 6px 6px 6px rgb(119, 233, 203), 2px 2px 1px rgb(0, 0, 0);
   margin: 0;  /*odstraní mezery nahoře/dole */
-  padding: 20px 0 10px 0;
+  padding: 60px 0 10px 0;
 }
 
 .vlk-header {
@@ -61,7 +61,7 @@ html, body {
 }
 
 .navigace {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Lora', serif;
     font-size:large;  
     font-weight: bold;
     text-transform: uppercase;
@@ -75,7 +75,17 @@ html, body {
   .navigace:hover {
     color: #eff303;       
   }
-
+/* Media query pro mobil */
+@media (max-width: 768px) {
+  #nav-bar {
+    justify-content: center; /* položky uprostřed */
+    gap: 6px; /* menší mezery */
+  }
+  .navigace {
+    font-size: medium;
+    letter-spacing: -0.5px; /* kompaktnější vzhled */
+  }
+}
 #rozcestnik{
   text-align: center;
   padding: 10px;
@@ -174,7 +184,7 @@ body.pages {
   color: rgb(221, 241, 237);
 }
 p.uvod {
-font-family: 'Roboto', sans-serif;
+font-family: 'Lora', serif;
 font-size: clamp(12px, 1.2vw, 16px);
 font-weight: 400;
 line-height: 1.4;
@@ -517,5 +527,37 @@ figure:hover img {
   figure {
     flex: 1 1 300px;
     max-width: min(70%, 100%);
+  }
+}
+
+/* Hover efekty pro zařízení s podporou hover */
+@media (hover: hover) and (pointer: fine) {
+  /* Hover efekty pro zařízení s myší / trackpadem */
+  .navigace:hover {
+    color: #eff303;
+  }
+
+  .tooltip:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .akryl-section img:hover {
+    transform: scale(1.50);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.6);
+    z-index: 1;
+  }
+
+  .akryl-section figure:hover .hover-info {
+    display: block;
+  }
+
+  figure:hover img {
+    transform: scale(1.2);
+  }
+
+  #nav-bar-akvarel a:hover {
+    color: white;
+    text-shadow: 2px 2px 5px rgba(255, 255, 255, 0.5);
   }
 }
